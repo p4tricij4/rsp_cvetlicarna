@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Šopki | Vrtnica & Mak</title>
+  <style>
+    @font-face {
+      font-family: "Playfair Display";
+      src: url("./static/PlayfairDisplay-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Playfair Display";
+      src: url("./static/PlayfairDisplay-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Playfair Display";
+      src: url("./static/PlayfairDisplay-Italic.ttf") format("truetype");
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    :root {
+      --bg-cream: #f5efe8;
+      --bg-white: #ffffff;
+      --forest: #2d4a3b;
+      --forest-dark: #1f3a2d;
+      --terracotta: #b8513a;
+      --text: #4a4a44;
+      --muted: #6b6b64;
+      --line: rgba(58, 58, 52, 0.12);
+      --font-serif: "Playfair Display", Georgia, serif;
+      --font-sans: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    .top { background: var(--bg-cream); }
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0 20px;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 30px; color: var(--forest);
+      letter-spacing: -0.01em;
+      font-weight: 600;
+    }
+    .logo em { font-style: italic; color: var(--terracotta); }
+    .nav { display: flex; gap: 20px; align-items: center; }
+    .nav a { color: var(--text); }
+    .nav a:hover { color: var(--terracotta); }
+
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 999px;
+      font-weight: 600; transition: .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--forest); color: #fff; }
+    .btn-secondary { background: var(--terracotta); color: #fff; }
+
+    .page-hero {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px;
+      align-items: center; padding: 26px 0 72px;
+    }
+    .eyebrow {
+      font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--terracotta); font-weight: 700; margin-bottom: 20px;
+    }
+    h1 {
+      font-family: var(--font-serif); font-weight: 400; font-size: clamp(42px, 5vw, 72px);
+      line-height: 0.98; color: var(--forest); margin-bottom: 24px;
+    }
+    .lead {
+      font-size: 21px; max-width: 540px; color: var(--text);
+    }
+    .hero-image {
+      height: 500px; border-radius: 26px 26px 110px 26px; overflow: hidden;
+      background: #ebdcc7;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+    .section-head {
+      display: flex; align-items: end; justify-content: space-between; gap: 18px;
+      margin-bottom: 24px;
+    }
+    .section-head h2 {
+      font-family: var(--font-serif); font-weight: 400; font-size: 42px; color: var(--forest);
+      line-height: 1.1;
+    }
+    .cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .product-card {
+      border: 1px solid var(--line); background: #fff; border-radius: 22px; overflow: hidden;
+      box-shadow: 0 12px 24px rgba(20, 20, 20, 0.04);
+    }
+    .product-card .img {
+      height: 290px; background: #eadfd2;
+    }
+    .product-card .content {
+      padding: 22px 20px 24px;
+    }
+    .product-card h3 {
+      font-family: var(--font-serif); font-weight: 600; font-size: 28px; color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      color: var(--muted); margin-bottom: 16px;
+    }
+    .price { font-weight: 700; color: var(--terracotta); }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .page-hero { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .cards { grid-template-columns: 1fr; }
+      .header { padding: 20px 0; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="container">
+      <header class="header">
+        <a href="index.html" class="logo">Vrtnica <em>&amp;</em> Mak</a>
+        <nav class="nav">
+          <a href="sopki.html">Šopki</a>
+          <a href="poroke.html">Poroke</a>
+          <a href="loncnice.html">Lončnice</a>
+          <a href="onas.html">O nas</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <a href="kontakt.html" class="btn btn-primary">Naroči</a>
+      </header>
+
+      <section class="page-hero">
+        <div>
+          <div class="eyebrow">Šopki</div>
+          <h1>Ročno sestavljene bukete za vsak trenutek.</h1>
+          <p class="lead">Izbor sezonskega cvetja, mešanice tekstur in nežnih barv za darilo, praznovanje ali vsakdan.</p>
+        </div>
+        <div class="hero-image">
+          <img src="./jenny_sopek_iz_vrtnic_soncnic_marjetic_in_lisianthusa_1-1024x1024.jpg.webp" alt="Ročno sestavljen šopek">
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Najbolj priljubljeni aranžmaji</h2>
+        <a href="kontakt.html" class="btn btn-secondary">Zasebnop dogovor</a>
+      </div>
+
+      <div class="cards">
+        <article class="product-card">
+          <div class="img"><img src="./Unknown.jpg" alt="Svetlo roza šopek"></div>
+          <div class="content">
+            <h3>Sunset Bloom</h3>
+            <p>Rože, lisianthus in peonije v mešanici nežnih rozinastih odtenkov.</p>
+            <div class="price">od 59 €</div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="img"><img src="./Unknown-2.jpg" alt="Modri šopek"></div>
+          <div class="content">
+            <h3>Velvet Mood</h3>
+            <p>Duša, svilene barve in elegantne teksture za poseben dogodek.</p>
+            <div class="price">od 72 €</div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="img"><img src="./Unknown-3.jpg" alt="Rdeč šopek"></div>
+          <div class="content">
+            <h3>Classic Love</h3>
+            <p>Klasičen izbor s šopki, ki so primerni za poroke in praznik ljubezni.</p>
+            <div class="price">od 68 €</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
